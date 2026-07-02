@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>رحلة مستقبلي: من الفصل إلى الأثر | Mostakbaly Journey</title>
+<style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root{
+  --navy-950:#060a18;
+  --navy-900:#0a1230;
+  --navy-880:#0d1638;
+  --navy-800:#101c44;
+  --navy-700:#172751;
+  --navy-600:#20326a;
+  --teal:#22d9c4;
+  --teal-dim:#0f8f83;
+  --gold-1:#f8e3a8;
+  --gold-2:#d3a94e;
+  --gold-3:#8f6b1f;
+  --emerald:#38d69f;
+  --amber:#f2a94e;
+  --ivory:#f8f5ec;
+  --ivory-dim:#c7c4b8;
+  --magenta:#b177e0;
+  --rose:#e27ba0;
+  --sky:#5fb3e0;
+  --shadow-deep: 0 30px 80px -20px rgba(0,0,0,.65);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --font-main: 'Segoe UI', Tahoma, 'Traditional Arabic', Geneva, Verdana, Arial, sans-serif;
+  --font-display: Georgia, 'Times New Roman', 'Segoe UI', serif;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{margin:0;padding:0;}
+body{
+  background:
+    radial-gradient(1200px 700px at 15% -10%, rgba(34,217,196,.10), transparent 60%),
+    radial-gradient(1000px 800px at 110% 10%, rgba(211,169,78,.10), transparent 55%),
+    linear-gradient(180deg, var(--navy-950), var(--navy-900) 40%, var(--navy-950));
+  color: var(--ivory);
+  font-family: var(--font-main);
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+[dir="rtl"] body{ direction:rtl; }
+[dir="ltr"] body{ direction:ltr; }
+html[lang="ar"] .en{display:none !important;}
+html[lang="en"] .ar{display:none !important;}
+html[lang="en"] body{ font-family:'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+img{max-width:100%;display:block;}
+::selection{background:var(--teal);color:var(--navy-950);}
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:var(--navy-950);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--gold-2),var(--gold-3));border-radius:10px;}
+
+.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--teal);font-weight:600;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--gold-2),transparent);}
+[dir="rtl"] .eyebrow::before{background:linear-gradient(270deg,var(--gold-2),transparent);}
+
+.section{position:relative;padding:110px 0;}
+.section-head{max-width:720px;margin:0 auto 56px;text-align:center;}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,4vw,3.1rem);
+  margin:12px 0 14px;
+  font-weight:700;
+  background:linear-gradient(120deg,var(--ivory) 30%, var(--gold-1) 65%, var(--gold-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1.25;
+}
+.section-desc{color:var(--ivory-dim);font-size:1.02rem;line-height:1.9;}
+
+.gold-btn, .ghost-btn{
+  border-radius:999px;padding:14px 30px;font-size:.95rem;font-weight:600;
+  border:1px solid transparent;transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.gold-btn{
+  background:linear-gradient(120deg,var(--gold-1),var(--gold-2) 60%,var(--gold-3));
+  color:var(--navy-950);
+  box-shadow:0 14px 34px -12px rgba(211,169,78,.55);
+}
+.gold-btn:hover{transform:translateY(-3px);box-shadow:0 20px 44px -14px rgba(211,169,78,.75);}
+.ghost-btn{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.18);
+  color:var(--ivory);
+  backdrop-filter:blur(6px);
+}
+.ghost-btn:hover{transform:translateY(-3px);border-color:var(--teal);color:var(--teal);}
+
+.glass{
+  background:linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+  border:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(14px);
+  border-radius:var(--radius-lg);
+}
+
+/* ============================================================
+   BACKGROUND FX
+============================================================ */
+#particles-field{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.p-dot{position:absolute;border-radius:50%;background:radial-gradient(circle, rgba(248,227,168,.9), rgba(248,227,168,0) 70%);opacity:.55;animation:float-up linear infinite;}
+@keyframes float-up{
+  0%{transform:translateY(0) translateX(0);opacity:0;}
+  10%{opacity:.6;}
+  90%{opacity:.4;}
+  100%{transform:translateY(-110vh) translateX(20px);opacity:0;}
+}
+.grid-overlay{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 30%, black, transparent 75%);
+}
+
+/* ============================================================
+   TOPBAR
+============================================================ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 26px;
+  background:linear-gradient(180deg, rgba(6,10,24,.85), rgba(6,10,24,0));
+  backdrop-filter:blur(6px);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.03em;font-size:1.02rem;}
+.brand-mark{
+  width:34px;height:34px;border-radius:10px;
+  background:conic-gradient(from 210deg, var(--gold-1), var(--teal), var(--magenta), var(--gold-1));
+  box-shadow:0 0 22px rgba(211,169,78,.5);
+  position:relative;
+}
+.brand-mark::after{content:"";position:absolute;inset:5px;border-radius:6px;background:var(--navy-950);}
+.top-actions{display:flex;align-items:center;gap:10px;}
+.lang-toggle{
+  display:flex;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.04);
+}
+.lang-toggle button{
+  padding:8px 16px;background:transparent;border:none;color:var(--ivory-dim);font-weight:700;font-size:.8rem;letter-spacing:.05em;
+  transition:all .3s;
+}
+.lang-toggle button.active{background:linear-gradient(120deg,var(--gold-1),var(--gold-2));color:var(--navy-950);}
+.admin-link{
+  font-size:.78rem;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+  color:var(--ivory-dim);background:rgba(255,255,255,.03);
+}
+.admin-link:hover{color:var(--teal);border-color:var(--teal);}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;z-index:1;
+  padding:150px 0 90px;
+}
+.hero-inner{max-width:900px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:34px;}
+.badge-pill{
+  padding:9px 20px;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:.03em;
+  border:1px solid rgba(211,169,78,.4);
+  background:linear-gradient(120deg, rgba(211,169,78,.14), rgba(34,217,196,.08));
+  color:var(--gold-1);
+  display:flex;align-items:center;gap:8px;
+  animation:pill-in .9s var(--ease) both;
+}
+.badge-pill:nth-child(1){animation-delay:.05s;}
+.badge-pill:nth-child(2){animation-delay:.18s;}
+.badge-pill:nth-child(3){animation-delay:.3s;}
+.badge-pill.primary{border-color:var(--teal);color:var(--teal);background:linear-gradient(120deg, rgba(34,217,196,.16), rgba(211,169,78,.08));}
+@keyframes pill-in{from{opacity:0;transform:translateY(-14px) scale(.9);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem,7vw,5.2rem);
+  font-weight:800;line-height:1.08;margin:0 0 6px;
+  background:linear-gradient(120deg,#fff 10%, var(--gold-1) 45%, var(--teal) 85%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:title-in 1.1s var(--ease) both .2s;
+  letter-spacing:.01em;
+}
+.hero-sub{
+  font-size:clamp(1.1rem,2.4vw,1.6rem);color:var(--ivory);font-weight:300;margin:0 0 22px;
+  animation:title-in 1.1s var(--ease) both .35s;
+}
+.hero-desc{
+  color:var(--ivory-dim);font-size:1.06rem;line-height:2;max-width:680px;margin:0 auto 40px;
+  animation:title-in 1.1s var(--ease) both .5s;
+}
+@keyframes title-in{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;animation:title-in 1.1s var(--ease) both .65s;}
+
+.hero-path{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.55;}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:0;}
+.glow-orb.g1{width:420px;height:420px;background:var(--teal);top:-120px;left:-120px;}
+.glow-orb.g2{width:380px;height:380px;background:var(--gold-2);bottom:-140px;right:-100px;}
+[dir="rtl"] .glow-orb.g1{left:auto;right:-120px;}
+[dir="rtl"] .glow-orb.g2{right:auto;left:-100px;}
+
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ivory-dim);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,10px);}}
+.scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--gold-2),transparent);}
+
+/* ============================================================
+   JOURNEY
+============================================================ */
+.journey-line-wrap{position:relative;max-width:900px;margin:0 auto;}
+.journey-track{
+  position:absolute;top:0;bottom:0;left:50%;width:2px;
+  background:linear-gradient(var(--teal), var(--gold-2), var(--magenta));
+  transform:translateX(-50%);opacity:.35;
+}
+.station{
+  position:relative;display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;gap:20px;
+  margin-bottom:64px;opacity:0;transform:translateY(50px);transition:opacity .9s var(--ease), transform .9s var(--ease);
+}
+.station.in-view{opacity:1;transform:translateY(0);}
+.station-num{
+  width:56px;height:56px;border-radius:50%;justify-self:center;
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.2rem;
+  background:radial-gradient(circle at 30% 30%, var(--gold-1), var(--gold-3));
+  color:var(--navy-950);box-shadow:0 0 26px rgba(211,169,78,.55), 0 0 0 6px rgba(255,255,255,.04);
+  z-index:2;
+}
+.station-card{padding:26px 28px;}
+.station:nth-child(odd) .station-card{grid-column:1;}
+.station:nth-child(odd) .station-spacer{grid-column:3;}
+.station:nth-child(even) .station-card{grid-column:3;}
+.station:nth-child(even) .station-spacer{grid-column:1;}
+.station-scene{
+  width:100%;height:64px;border-radius:14px;margin-bottom:14px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg, rgba(34,217,196,.12), rgba(211,169,78,.10));
+}
+.station-scene svg{width:100%;height:100%;}
+.station-title{font-family:var(--font-display);font-size:1.3rem;margin:0 0 8px;color:var(--gold-1);}
+.station-text{color:var(--ivory-dim);line-height:1.85;font-size:.96rem;}
+@media (max-width:760px){
+  .journey-track{left:28px;}
+  .station{grid-template-columns:56px 1fr;}
+  .station-num{grid-column:1;justify-self:start;width:44px;height:44px;font-size:1rem;}
+  .station:nth-child(odd) .station-card, .station:nth-child(even) .station-card{grid-column:2;}
+  .station-spacer{display:none;}
+}
+
+/* ============================================================
+   IMPACT NUMBERS
+============================================================ */
+.impact-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+.impact-card{
+  padding:30px 18px;text-align:center;position:relative;overflow:hidden;
+  transition:transform .4s var(--ease);
+}
+.impact-card:hover{transform:translateY(-8px);}
+.impact-card::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(34,217,196,.18), transparent 70%);
+  opacity:0;transition:opacity .4s;
+}
+.impact-card:hover::before{opacity:1;}
+.impact-num{
+  font-family:var(--font-display);font-size:2.4rem;font-weight:800;
+  background:linear-gradient(120deg,var(--teal),var(--gold-1));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.impact-label{color:var(--ivory-dim);font-size:.82rem;margin-top:8px;line-height:1.5;}
+@media (max-width:900px){.impact-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================================
+   GALLERY
+============================================================ */
+.gallery-controls{
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center;margin-bottom:44px;
+}
+.search-box{
+  display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;
+  min-width:260px;
+}
+.search-box input{
+  background:transparent;border:none;outline:none;color:var(--ivory);font-size:.92rem;width:100%;
+}
+.search-box input::placeholder{color:var(--ivory-dim);}
+.filter-select{
+  padding:12px 20px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  color:var(--ivory);font-size:.88rem;outline:none;
+}
+.filter-select option{background:var(--navy-900);color:var(--ivory);}
+
+.teacher-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px;
+}
+.teacher-card{
+  position:relative;padding:26px 22px 24px;text-align:center;cursor:pointer;
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s;
+  overflow:hidden;
+}
+.teacher-card::before{
+  content:"";position:absolute;inset:0;border-radius:var(--radius-lg);
+  background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%), rgba(211,169,78,.18), transparent 60%);
+  opacity:0;transition:opacity .4s;pointer-events:none;
+}
+.teacher-card:hover::before{opacity:1;}
+.teacher-card:hover{transform:translateY(-10px) rotateX(2deg);box-shadow:var(--shadow-deep);border-color:rgba(211,169,78,.35);}
+.avatar-wrap{width:120px;height:120px;margin:0 auto 18px;position:relative;}
+.avatar-wrap svg{width:100%;height:100%;filter:drop-shadow(0 10px 24px rgba(0,0,0,.5));}
+.t-name{font-family:var(--font-display);font-size:1.18rem;color:var(--ivory);margin:0 0 4px;font-weight:700;}
+.t-meta{color:var(--gold-1);font-size:.8rem;margin-bottom:2px;}
+.t-meta.admin-line{color:var(--teal);}
+.t-bio{color:var(--ivory-dim);font-size:.82rem;line-height:1.7;margin:12px 0 16px;min-height:44px;}
+.view-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;
+  font-size:.78rem;font-weight:700;letter-spacing:.03em;
+  background:linear-gradient(120deg, rgba(211,169,78,.2), rgba(34,217,196,.14));
+  border:1px solid rgba(211,169,78,.4);color:var(--gold-1);
+  transition:all .3s;
+}
+.teacher-card:hover .view-btn{background:linear-gradient(120deg,var(--gold-1),var(--gold-2));color:var(--navy-950);}
+.no-results{text-align:center;color:var(--ivory-dim);padding:60px 0;grid-column:1/-1;}
+
+/* ============================================================
+   PARTNERS
+============================================================ */
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px;}
+.partner-card{padding:26px 18px;text-align:center;}
+.partner-card.erc{
+  border:1px solid rgba(211,169,78,.5);
+  background:linear-gradient(160deg, rgba(211,169,78,.14), rgba(255,255,255,.02));
+}
+.p-avatar{width:88px;height:88px;margin:0 auto 14px;}
+.p-avatar svg{width:100%;height:100%;}
+.p-name{font-weight:700;font-size:1rem;color:var(--ivory);}
+.p-role{color:var(--teal);font-size:.78rem;margin-top:4px;}
+
+/* ============================================================
+   QNA
+============================================================ */
+.qna-wrap{max-width:760px;margin:0 auto;}
+.qna-form{display:flex;gap:10px;margin-bottom:34px;flex-wrap:wrap;}
+.qna-form input{
+  flex:1;min-width:200px;padding:14px 20px;border-radius:999px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);color:var(--ivory);outline:none;font-size:.92rem;
+}
+.qna-list{display:flex;flex-direction:column;gap:16px;}
+.qna-bubble{padding:18px 22px;}
+.qna-q{color:var(--teal);font-size:.85rem;margin-bottom:8px;font-weight:700;}
+.qna-a{color:var(--ivory-dim);font-size:.9rem;line-height:1.8;}
+.qna-empty{text-align:center;color:var(--ivory-dim);padding:20px;font-size:.88rem;}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{padding:60px 0 40px;text-align:center;color:var(--ivory-dim);font-size:.82rem;position:relative;z-index:1;}
+footer .foot-brand{color:var(--gold-1);font-weight:700;margin-bottom:10px;font-family:var(--font-display);font-size:1.1rem;}
+footer .foot-links{display:flex;justify-content:center;gap:20px;margin-top:18px;}
+
+/* ============================================================
+   MODAL
+============================================================ */
+.modal-overlay{
+  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
+  background:rgba(4,7,18,.78);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+  padding:20px;
+}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal-box{
+  width:100%;max-width:440px;padding:36px 30px;text-align:center;position:relative;
+  transform:scale(.88) translateY(20px);transition:transform .45s var(--ease);
+}
+.modal-overlay.open .modal-box{transform:scale(1) translateY(0);}
+.modal-close{
+  position:absolute;top:16px;inset-inline-end:16px;width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--ivory);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.modal-avatar{width:100px;height:100px;margin:0 auto 18px;}
+.modal-avatar svg{width:100%;height:100%;}
+.modal-name{font-family:var(--font-display);font-size:1.3rem;margin:6px 0 4px;}
+.modal-meta{color:var(--gold-1);font-size:.82rem;margin-bottom:16px;}
+.modal-msg{color:var(--ivory-dim);line-height:1.9;font-size:.92rem;margin-bottom:24px;}
+.modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+
+/* ============================================================
+   ADMIN
+============================================================ */
+#admin-overlay{
+  position:fixed;inset:0;z-index:300;background:var(--navy-950);
+  display:none;overflow-y:auto;
+}
+#admin-overlay.open{display:block;animation:fade-in .5s var(--ease);}
+@keyframes fade-in{from{opacity:0;}to{opacity:1;}}
+.admin-header{
+  display:flex;justify-content:space-between;align-items:center;padding:18px 30px;
+  border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;background:rgba(6,10,24,.92);backdrop-filter:blur(10px);z-index:5;
+}
+.admin-title{font-family:var(--font-display);font-size:1.3rem;color:var(--gold-1);display:flex;align-items:center;gap:10px;}
+.admin-body{display:flex;min-height:calc(100vh - 70px);}
+.admin-tabs{
+  width:220px;flex-shrink:0;padding:24px 14px;border-inline-end:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;gap:6px;
+}
+.admin-tab{
+  padding:12px 16px;border-radius:12px;text-align:start;background:transparent;border:1px solid transparent;
+  color:var(--ivory-dim);font-size:.88rem;transition:all .3s;
+}
+.admin-tab.active, .admin-tab:hover{background:rgba(34,217,196,.1);border-color:rgba(34,217,196,.3);color:var(--teal);}
+.admin-content{flex:1;padding:30px 34px;}
+.admin-panel-section{display:none;}
+.admin-panel-section.active{display:block;animation:fade-in .4s var(--ease);}
+.admin-section-title{font-family:var(--font-display);font-size:1.2rem;color:var(--gold-1);margin-bottom:20px;}
+.admin-note{
+  font-size:.78rem;color:var(--ivory-dim);background:rgba(255,255,255,.04);padding:12px 16px;border-radius:10px;
+  border:1px dashed rgba(255,255,255,.15);margin-bottom:20px;
+}
+.admin-table-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,.08);}
+table.admin-table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:900px;}
+table.admin-table th{
+  background:rgba(255,255,255,.04);color:var(--gold-1);padding:12px 14px;text-align:start;font-weight:700;
+  border-bottom:1px solid rgba(255,255,255,.1);white-space:nowrap;
+}
+table.admin-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top;}
+table.admin-table input, table.admin-table textarea{
+  width:100%;min-width:140px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;padding:8px 10px;color:var(--ivory);font-size:.8rem;font-family:inherit;
+}
+table.admin-table textarea{min-height:44px;resize:vertical;}
+.admin-mini-btn{
+  padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);
+  color:var(--ivory-dim);font-size:.74rem;margin:2px;transition:all .25s;
+}
+.admin-mini-btn:hover{color:var(--teal);border-color:var(--teal);}
+.admin-mini-btn.danger:hover{color:var(--rose);border-color:var(--rose);}
+.admin-mini-btn.gold{background:linear-gradient(120deg,var(--gold-1),var(--gold-2));color:var(--navy-950);border:none;font-weight:700;}
+.admin-actions-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.admin-form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:700px;}
+.admin-form-grid label{display:block;font-size:.78rem;color:var(--ivory-dim);margin-bottom:6px;}
+.admin-form-grid input, .admin-form-grid textarea{
+  width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;
+  padding:10px 14px;color:var(--ivory);font-size:.88rem;font-family:inherit;
+}
+.admin-form-grid textarea{min-height:70px;}
+.qna-admin-item{padding:16px;border:1px solid rgba(255,255,255,.1);border-radius:14px;margin-bottom:14px;}
+.qna-admin-item textarea{width:100%;margin-top:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:10px;color:var(--ivory);font-family:inherit;font-size:.85rem;min-height:60px;}
+
+.login-box{max-width:380px;margin:100px auto;padding:40px 34px;text-align:center;}
+.login-box input{
+  width:100%;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);color:var(--ivory);margin-bottom:14px;font-size:.9rem;outline:none;
+}
+.login-error{color:var(--rose);font-size:.82rem;min-height:18px;margin-bottom:6px;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+@media (max-width:640px){
+  .admin-body{flex-direction:column;}
+  .admin-tabs{width:100%;flex-direction:row;overflow-x:auto;border-inline-end:none;border-bottom:1px solid rgba(255,255,255,.08);}
+  .admin-form-grid{grid-template-columns:1fr;}
+  .impact-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="particles-field"></div>
+<div class="grid-overlay"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <span class="ar">رحلة مستقبلي</span><span class="en">Mostakbaly Journey</span>
+  </div>
+  <div class="top-actions">
+    <div class="lang-toggle">
+      <button id="btn-lang-ar" class="active" onclick="setLang('ar')">AR</button>
+      <button id="btn-lang-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#" class="admin-link" onclick="openAdminEntry();return false;">
+      <span class="ar">لوحة التحكم</span><span class="en">Admin Panel</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="glow-orb g1"></div>
+  <div class="glow-orb g2"></div>
+  <div class="container hero-inner">
+    <div class="badges">
+      <div class="badge-pill primary">
+        <span class="ar">الشركة المصرية للتكرير ERC</span><span class="en">Egyptian Refining Company – ERC</span>
+      </div>
+      <div class="badge-pill">
+        <span class="ar">الجامعة الأمريكية بالقاهرة</span><span class="en">The American University in Cairo</span>
+      </div>
+      <div class="badge-pill">
+        <span class="ar">برنامج مستقبلي</span><span class="en">Mostakbaly Program</span>
+      </div>
+    </div>
+    <h1 class="hero-title"><span class="ar">رحلة مستقبلي</span><span class="en">Mostakbaly Journey</span></h1>
+    <p class="hero-sub"><span class="ar">من الفصل إلى الأثر</span><span class="en">From Classroom to Impact</span></p>
+    <p class="hero-desc">
+      <span class="ar">هذه ليست صفحة عرض عادية، بل مساحة تفاعلية توثق رحلة معلمين خاضوا عامًا من التعلم والتجريب، وحوّلوا التكنولوجيا إلى باب جديد للأثر داخل الفصل.</span>
+      <span class="en">This is not a regular showcase page; it is an interactive space documenting a year-long journey of teachers who turned learning, practice, and technology into meaningful classroom impact.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#journey" class="gold-btn"><span class="ar">ابدأ الرحلة</span><span class="en">Start Journey</span></a>
+      <a href="#gallery" class="ghost-btn"><span class="ar">استكشف معرض الأثر</span><span class="en">Explore Impact Gallery</span></a>
+      <a href="#" class="ghost-btn" onclick="openAdminEntry();return false;"><span class="ar">لوحة التحكم</span><span class="en">Admin Panel</span></a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span><span class="ar">مرر للأسفل</span><span class="en">Scroll</span></div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section" id="journey">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="ar">محطات الرحلة</span><span class="en">Journey Stations</span></div>
+      <h2 class="section-title"><span class="ar">سبع محطات نحو الأثر</span><span class="en">Seven Stations Toward Impact</span></h2>
+      <p class="section-desc"><span class="ar">رحلة عام كامل، من الفكرة الأولى إلى احتفالية التخرج.</span><span class="en">A year-long journey, from the first idea to the graduation celebration.</span></p>
+    </div>
+    <div class="journey-line-wrap">
+      <div class="journey-track"></div>
+      <div id="stations-container"></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="impact-grid" id="impact-grid"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="ar">معرض الأثر</span><span class="en">Impact Gallery</span></div>
+      <h2 class="section-title"><span class="ar">معلمو الرحلة</span><span class="en">Teachers of the Journey</span></h2>
+      <p class="section-desc"><span class="ar">اثنان وعشرون معلمًا ومعلمة، كل واحد منهم يحمل قصة تستحق الاحتفاء.</span><span class="en">Twenty-two teachers, each carrying a story worth celebrating.</span></p>
+    </div>
+    <div class="gallery-controls reveal">
+      <div class="search-box glass">
+        <span>🔍</span>
+        <input id="search-input" type="text" placeholder="ابحث بالاسم..." oninput="renderTeachers()">
+      </div>
+      <select id="filter-admin" class="filter-select" onchange="renderTeachers()">
+        <option value=""><span class="ar">كل الإدارات</span></option>
+      </select>
+      <button class="ghost-btn" onclick="clearFilters()"><span class="ar">عرض الكل</span><span class="en">Show All</span></button>
+    </div>
+    <div class="teacher-grid reveal" id="teacher-grid"></div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="ar">بامتنان</span><span class="en">With Gratitude</span></div>
+      <h2 class="section-title"><span class="ar">شركاء النجاح وأصوات دعمت الرحلة</span><span class="en">Partners of Success &amp; Voices Behind the Journey</span></h2>
+      <p class="section-desc">
+        <span class="ar">بكل امتنان، نبدأ شكرنا بالشركة المصرية للتكرير ERC، شريك هذه الرحلة، ونوجه التقدير لكل من دعم المعلمين وفتح أمامهم مساحة جديدة للتعلم والتجريب وصناعة الأثر.</span>
+        <span class="en">With deep gratitude, we begin by thanking Egyptian Refining Company – ERC, the partner of this journey, and everyone who supported teachers in learning, experimenting, and creating impact.</span>
+      </p>
+    </div>
+    <div class="partners-grid reveal" id="partners-grid"></div>
+  </div>
+</section>
+
+<!-- QNA -->
+<section class="section" id="qna">
+  <div class="container qna-wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="ar">تواصل</span><span class="en">Connect</span></div>
+      <h2 class="section-title"><span class="ar">اسأل معلمي المنحة</span><span class="en">Ask the Scholarship Teachers</span></h2>
+    </div>
+    <div class="qna-form reveal">
+      <input id="qna-input" type="text" placeholder="اكتب سؤالك هنا...">
+      <button class="gold-btn" onclick="submitQuestion()"><span class="ar">إرسال</span><span class="en">Send</span></button>
+    </div>
+    <div class="qna-list reveal" id="qna-list"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-brand ar">رحلة مستقبلي: من الفصل إلى الأثر</div>
+    <div class="foot-brand en">Mostakbaly Journey: From Classroom to Impact</div>
+    <div class="ar">بالتعاون مع الجامعة الأمريكية بالقاهرة والشركة المصرية للتكرير ERC</div>
+    <div class="en">In collaboration with The American University in Cairo and Egyptian Refining Company – ERC</div>
+    <div class="foot-links">
+      <a href="#hero" class="ar">أعلى الصفحة</a><a href="#hero" class="en">Back to top</a>
+      <a href="#" onclick="openAdminEntry();return false;"><span class="ar">لوحة التحكم</span><span class="en">Admin Panel</span></a>
+    </div>
+  </div>
+</footer>
+
+<!-- TEACHER MODAL -->
+<div class="modal-overlay" id="teacher-modal">
+  <div class="modal-box glass">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-avatar" id="modal-avatar"></div>
+    <div class="modal-name" id="modal-name"></div>
+    <div class="modal-meta" id="modal-meta"></div>
+    <div class="modal-msg">
+      <span class="ar">تجربة هذا المعلم يتم تجهيزها الآن، وستُضاف قريبًا ضمن معرض الأثر.</span>
+      <span class="en">This teacher's digital experience is being prepared and will be added soon to the Impact Gallery.</span>
+    </div>
+    <div class="modal-actions">
+      <button class="ghost-btn" onclick="closeModal()"><span class="ar">العودة للمعرض</span><span class="en">Back to Gallery</span></button>
+      <button class="gold-btn" onclick="closeModal()"><span class="ar">إغلاق</span><span class="en">Close</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal-overlay" id="login-modal">
+  <div class="login-box glass">
+    <div class="modal-avatar" style="margin-bottom:14px;">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="url(#lg)"/><defs><radialGradient id="lg"><stop offset="0%" stop-color="#22d9c4"/><stop offset="100%" stop-color="#0d1638"/></radialGradient></defs></svg>
+    </div>
+    <h3 style="font-family:var(--font-display);color:var(--gold-1);margin-bottom:6px;">
+      <span class="ar">دخول لوحة التحكم</span><span class="en">Admin Login</span>
+    </h3>
+    <p style="color:var(--ivory-dim);font-size:.85rem;margin-bottom:20px;">
+      <span class="ar">مساحة العرض والتحكم المحلي</span><span class="en">Local demo control room</span>
+    </p>
+    <input id="login-user" type="text" placeholder="Username">
+    <input id="login-pass" type="password" placeholder="Password">
+    <div class="login-error" id="login-error"></div>
+    <button class="gold-btn" style="width:100%;justify-content:center;margin-bottom:10px;" onclick="tryLogin()">
+      <span class="ar">دخول</span><span class="en">Login</span>
+    </button>
+    <button class="ghost-btn" style="width:100%;justify-content:center;" onclick="closeLoginModal()">
+      <span class="ar">إلغاء</span><span class="en">Cancel</span>
+    </button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-overlay">
+  <div class="admin-header">
+    <div class="admin-title">🛠️ <span class="ar">غرفة التحكم — رحلة مستقبلي</span><span class="en">Control Room — Mostakbaly Journey</span></div>
+    <div style="display:flex;gap:10px;">
+      <button class="ghost-btn" onclick="closeAdmin()"><span class="ar">معاينة الموقع</span><span class="en">Preview Site</span></button>
+      <button class="ghost-btn" onclick="logoutAdmin()"><span class="ar">خروج</span><span class="en">Logout</span></button>
+    </div>
+  </div>
+  <div class="admin-body">
+    <div class="admin-tabs">
+      <button class="admin-tab active" data-tab="teachers" onclick="showAdminTab('teachers')"><span class="ar">المعلمون</span><span class="en">Teachers</span></button>
+      <button class="admin-tab" data-tab="hero" onclick="showAdminTab('hero')"><span class="ar">نصوص Hero</span><span class="en">Hero Text</span></button>
+      <button class="admin-tab" data-tab="partners" onclick="showAdminTab('partners')"><span class="ar">الشركاء</span><span class="en">Partners</span></button>
+      <button class="admin-tab" data-tab="qna" onclick="showAdminTab('qna')"><span class="ar">الأسئلة</span><span class="en">Q&amp;A</span></button>
+      <button class="admin-tab" data-tab="data" onclick="showAdminTab('data')"><span class="ar">البيانات</span><span class="en">Data</span></button>
+    </div>
+    <div class="admin-content">
+
+      <div class="admin-panel-section active" id="tab-teachers">
+        <div class="admin-section-title"><span class="ar">إدارة المعلمين</span><span class="en">Manage Teachers</span></div>
+        <div class="admin-note ar">تعديل الترتيب، الأسماء، المدرسة، الإدارة، السيرة، والرابط. التعديلات تُحفظ محليًا في هذا المتصفح فقط.</div>
+        <div class="admin-note en">Edit order, names, school, administration, bio, and site link. Changes save locally to this browser only.</div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>#</th><th class="ar">الاسم AR</th><th class="en">Name EN</th><th class="ar">المدرسة AR</th><th class="en">School EN</th>
+                <th class="ar">الإدارة AR</th><th class="en">Admin EN</th><th class="ar">bio AR</th><th class="en">bio EN</th>
+                <th>Link</th><th class="ar">ظهور</th><th class="ar">ترتيب</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="admin-teachers-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-hero">
+        <div class="admin-section-title"><span class="ar">تعديل نصوص Hero</span><span class="en">Edit Hero Text</span></div>
+        <div class="admin-form-grid">
+          <div><label class="ar">العنوان الرئيسي AR</label><label class="en">Title AR</label><input id="hero-titleAr"></div>
+          <div><label class="ar">Title EN</label><input id="hero-titleEn"></div>
+          <div><label class="ar">العنوان الفرعي AR</label><input id="hero-subAr"></div>
+          <div><label class="ar">Subtitle EN</label><input id="hero-subEn"></div>
+          <div style="grid-column:1/-1;"><label class="ar">الوصف AR</label><textarea id="hero-descAr"></textarea></div>
+          <div style="grid-column:1/-1;"><label class="ar">Description EN</label><textarea id="hero-descEn"></textarea></div>
+        </div>
+        <div class="admin-actions-row">
+          <button class="admin-mini-btn gold" onclick="saveHeroText()"><span class="ar">حفظ</span><span class="en">Save</span></button>
+        </div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-partners">
+        <div class="admin-section-title"><span class="ar">إدارة الشركاء والدكاترة</span><span class="en">Manage Partners &amp; Mentors</span></div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th class="ar">الاسم AR</th><th class="en">Name EN</th><th class="ar">الفئة</th></tr></thead>
+            <tbody id="admin-partners-body"></tbody>
+          </table>
+        </div>
+        <div class="admin-actions-row">
+          <button class="admin-mini-btn gold" onclick="savePartners()"><span class="ar">حفظ</span><span class="en">Save</span></button>
+        </div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-qna">
+        <div class="admin-section-title"><span class="ar">إدارة الأسئلة</span><span class="en">Manage Questions</span></div>
+        <div class="admin-note ar">هذه الخاصية Demo محلي يعمل عبر localStorage في هذا الجهاز فقط، بدون خادم حقيقي.</div>
+        <div class="admin-note en">This is a local demo feature powered by localStorage on this device only — no real backend.</div>
+        <div id="admin-qna-list"></div>
+      </div>
+
+      <div class="admin-panel-section" id="tab-data">
+        <div class="admin-section-title"><span class="ar">إدارة البيانات</span><span class="en">Data Management</span></div>
+        <div class="admin-actions-row">
+          <button class="admin-mini-btn gold" onclick="exportData()"><span class="ar">تصدير JSON</span><span class="en">Export JSON</span></button>
+          <label class="admin-mini-btn gold" style="cursor:pointer;">
+            <span class="ar">استيراد JSON</span><span class="en">Import JSON</span>
+            <input type="file" accept=".json" style="display:none;" onchange="importData(event)">
+          </label>
+          <button class="admin-mini-btn danger" onclick="resetData()"><span class="ar">استعادة البيانات الأصلية</span><span class="en">Reset to Original Data</span></button>
+        </div>
+        <p class="admin-note ar" style="margin-top:20px;">كل هذه اللوحة تعرض بيانات تُحفظ محليًا داخل هذا المتصفح فقط عبر localStorage، وهي مخصصة للعرض التقديمي فقط.</p>
+        <p class="admin-note en">This panel stores all data locally in this browser via localStorage, intended for demo/presentation purposes only.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN GATE FOR ADMIN OVERLAY (shown before admin content if not authenticated) -->
+
+<script>
+/* ============================================================
+   DEFAULT DATA
+============================================================ */
+const DEFAULT_TEACHERS = [
+{id:"t01",order:7,nameAr:"امل عبدالعزيز كامل",nameEn:"Amal Abdelaziz Kamel",schoolAr:"اسكو",schoolEn:"ESCO School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/amal/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9",visible:true},
+{id:"t02",order:null,nameAr:"احمد وجيه احمد",nameEn:"Ahmed Wagih Ahmed",schoolAr:"الخصوص الرسمية لغات",schoolEn:"Al Khusus Official Languages School",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t03",order:3,nameAr:"مروة يحي سعيد",nameEn:"Marwa Yehia Said",schoolAr:"علي مبارك",schoolEn:"Ali Mubarak School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/marwayehia/home",visible:true},
+{id:"t04",order:null,nameAr:"مروة صفوت السمان",nameEn:"Marwa Safwat El Samman",schoolAr:"الخزف والصيني",schoolEn:"Al Khazaf Wal Seeni School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"",visible:true},
+{id:"t05",order:null,nameAr:"ثروت سامي شفيق",nameEn:"Tharwat Samy Shafik",schoolAr:"مجمع الخصوص الابتدائيه",schoolEn:"Al Khusus Primary Complex",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t06",order:null,nameAr:"سهره فهمي حامد",nameEn:"Sahra Fahmy Hamed",schoolAr:"مجمع الخصوص الابتدائيه",schoolEn:"Al Khusus Primary Complex",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t07",order:null,nameAr:"حسن شحاته محمد",nameEn:"Hassan Shehata Mohamed",schoolAr:"مجمع الخصوص الابتدائيه",schoolEn:"Al Khusus Primary Complex",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/hassanshehata/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9",visible:true},
+{id:"t08",order:2,nameAr:"نانسي سامي عبدالمنعم",nameEn:"Nancy Samy Abdelmonem",schoolAr:"د/يحي المشد الرسميه",schoolEn:"Dr. Yehia El Meshad Official School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/nancysamy/home",visible:true},
+{id:"t09",order:6,nameAr:"كريمان حسين مصطفي",nameEn:"Kareman Hussein Mostafa",schoolAr:"العقاد الابتدائيه",schoolEn:"Al Akkad Primary School",administrationAr:"المطرية",administrationEn:"Al Matariya",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/kareman/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9",visible:true},
+{id:"t10",order:null,nameAr:"محمد جودة ربيع",nameEn:"Mohamed Gouda Rabie",schoolAr:"بهتيم الرسمية لغات",schoolEn:"Bahtim Official Languages School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"",visible:true},
+{id:"t11",order:null,nameAr:"سارة حسن احمد",nameEn:"Sara Hassan Ahmed",schoolAr:"الخزف والصيني",schoolEn:"Al Khazaf Wal Seeni School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"",visible:true},
+{id:"t12",order:null,nameAr:"ايمان عبدالمنعم السيد",nameEn:"Eman Abdelmonem El Sayed",schoolAr:"مجمع الخصوص الابتدائيه",schoolEn:"Al Khusus Primary Complex",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t13",order:null,nameAr:"مدحت يوسف يعقوب",nameEn:"Medhat Youssef Yacoub",schoolAr:"نجيب محفوظ الابتدائية",schoolEn:"Naguib Mahfouz Primary School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"",visible:true},
+{id:"t14",order:5,nameAr:"نيفين فوزي نسيم",nameEn:"Nevein Fawzy Naseem",schoolAr:"أسماء بنت ابي بكر",schoolEn:"Asmaa Bint Abi Bakr School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/nevein-fawzy?usp=sharing",visible:true},
+{id:"t15",order:null,nameAr:"احمد محمود عبدالغني",nameEn:"Ahmed Mahmoud Abdelghany",schoolAr:"الشهيد إيهاب إبراهيم",schoolEn:"Al Shaheed Ehab Ibrahim School",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t16",order:null,nameAr:"هبه احمد عبدالعزيز",nameEn:"Heba Ahmed Abdelaziz",schoolAr:"ابطال العبور",schoolEn:"Abtal Al Obour School",administrationAr:"المطرية",administrationEn:"Al Matariya",personalSiteUrl:"",visible:true},
+{id:"t17",order:4,nameAr:"جمال حسني محمد",nameEn:"Gamal Hosny Mohamed",schoolAr:"عمربن الخطاب الابتدائية",schoolEn:"Omar Ibn Al Khattab Primary School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/shonda/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9",visible:true},
+{id:"t18",order:null,nameAr:"أسماء سمير إبراهيم",nameEn:"Asmaa Samir Ibrahim",schoolAr:"الخزف والصيني",schoolEn:"Al Khazaf Wal Seeni School",administrationAr:"شرق شبرا",administrationEn:"East Shubra",personalSiteUrl:"",visible:true},
+{id:"t19",order:1,nameAr:"مريم مدحت يوسف",nameEn:"Mariam Medhat Youssef",schoolAr:"الخصوص الرسمية لغات",schoolEn:"Al Khusus Official Languages School",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/mariammedhat/%D8%AF%D8%B1%D8%B3-%D9%85%D8%B5%D8%BA%D8%B1",visible:true},
+{id:"t20",order:null,nameAr:"شيماء محمد",nameEn:"Shaimaa Mohamed",schoolAr:"الخصوص الرسمية لغات",schoolEn:"Al Khusus Official Languages School",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true},
+{id:"t21",order:null,nameAr:"لوقا إيليا نجيب",nameEn:"Luka Elya Naguib",schoolAr:"السيده خديجه",schoolEn:"Al Sayeda Khadija School",administrationAr:"المطرية",administrationEn:"Al Matariya",personalSiteUrl:"https://sites.google.com/xed.aucegypt.edu/mrluka/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/%D9%81%D9%84%D8%B3%D9%81%D8%AA%D9%8A-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85",visible:true},
+{id:"t22",order:null,nameAr:"شنودة عبدالله فهمي",nameEn:"Shenouda Abdalla Fahmy",schoolAr:"الخصوص الرسمية لغات",schoolEn:"Al Khusus Official Languages School",administrationAr:"الخصوص",administrationEn:"Al Khusus",personalSiteUrl:"",visible:true}
+];
+
+const BIO_TEMPLATES_AR = [
+ (t)=>`معلم/ة شارك/ت في رحلة مستقبلي بروح منفتحة على التعلم والتجريب، وسعى/سعت لتحويل الفصل في ${t.schoolAr} إلى مساحة أكثر تفاعلًا وإبداعًا.`,
+ (t)=>`ضمن رحلة المنحة، قدّم معلم/ة ${t.schoolAr} نموذجًا للمعلم المتعلم الذي يبحث عن أثر حقيقي داخل الفصل والمدرسة.`,
+ (t)=>`يمثل هذا المعلم/هذه المعلمة جزءًا من حكاية مستقبلي؛ حكاية تبدأ من إدارة ${t.administrationAr} وتمتد إلى أثر أوسع في تعلم الطلاب.`,
+ (t)=>`شارك/ت في رحلة امتدت لعام كامل من التطوير والتطبيق، واضعًا/واضعةً الطالب في قلب التجربة التعليمية داخل ${t.schoolAr}.`,
+ (t)=>`يحمل/تحمل هذا المعلم/هذه المعلمة تجربة تعليمية تسعى إلى ربط المعرفة بالتكنولوجيا، وتحويل التعلم إلى مشاركة وحياة داخل الفصل.`
+];
+const BIO_TEMPLATES_EN = [
+ (t)=>`A teacher who joined the Mostakbaly journey with openness to learning, experimentation, and creating more interactive classroom experiences at ${t.schoolEn}.`,
+ (t)=>`Throughout the scholarship journey, this teacher from ${t.schoolEn} represented the spirit of a lifelong learner seeking meaningful impact inside the classroom.`,
+ (t)=>`This teacher is part of the Mostakbaly story from ${t.administrationEn}; a story that begins at school and grows into wider learning impact.`,
+ (t)=>`A participant in a year-long journey of development and practice, placing students at the heart of the learning experience at ${t.schoolEn}.`,
+ (t)=>`This teacher's journey reflects the connection between knowledge, technology, and more engaging classroom learning.`
+];
+DEFAULT_TEACHERS.forEach((t,i)=>{
+  t.bioAr = BIO_TEMPLATES_AR[i%5](t);
+  t.bioEn = BIO_TEMPLATES_EN[i%5](t);
+});
+
+const DEFAULT_PARTNERS = [
+  {nameAr:"الشركة المصرية للتكرير ERC",nameEn:"Egyptian Refining Company – ERC",group:"erc-main"},
+  {nameAr:"مستر هانى اسماعيل",nameEn:"Mr. Hany Ismail",group:"erc"},
+  {nameAr:"مستر محمد صبحى",nameEn:"Mr. Mohamed Sobhy",group:"erc"},
+  {nameAr:"دكتور محمد النجدى",nameEn:"Dr. Mohamed El Nagdy",group:"mentor"},
+  {nameAr:"دكتور سها الزلبانى",nameEn:"Dr. Soha El Zalbany",group:"mentor"},
+  {nameAr:"دكتور شيماء حافظ",nameEn:"Dr. Shaimaa Hafez",group:"mentor"},
+  {nameAr:"ميس لطيفة محمد",nameEn:"Miss Latifa Mohamed",group:"mentor"},
+  {nameAr:"ميس نورا سعيد",nameEn:"Miss Nora Said",group:"mentor"}
+];
+
+const DEFAULT_HERO = {
+  titleAr:"رحلة مستقبلي", titleEn:"Mostakbaly Journey",
+  subAr:"من الفصل إلى الأثر", subEn:"From Classroom to Impact",
+  descAr:"هذه ليست صفحة عرض عادية، بل مساحة تفاعلية توثق رحلة معلمين خاضوا عامًا من التعلم والتجريب، وحوّلوا التكنولوجيا إلى باب جديد للأثر داخل الفصل.",
+  descEn:"This is not a regular showcase page; it is an interactive space documenting a year-long journey of teachers who turned learning, practice, and technology into meaningful classroom impact."
+};
+
+const STATIONS = [
+ {titleAr:"البداية",titleEn:"The Beginning",textAr:"بدأت الرحلة بفكرة بسيطة: أن تمكين المعلم هو بداية تغيير حقيقي داخل الفصل.",textEn:"The journey began with a simple belief: empowering teachers creates real change inside the classroom."},
+ {titleAr:"الانطلاق",titleEn:"The Launch",textAr:"اجتمع المعلمون في تجربة تعليمية امتدت لعام كامل، مليئة بالتعلم والمشاركة والتجريب.",textEn:"Teachers came together for a year-long learning experience filled with exploration, collaboration, and practice."},
+ {titleAr:"التعلم",titleEn:"Learning",textAr:"تعرف المشاركون على أساليب تدريس حديثة، وتفكير تأملي، وطرق تجعل الطالب محور العملية التعليمية.",textEn:"Participants explored modern teaching strategies, reflective practice, and learner-centered approaches."},
+ {titleAr:"التكنولوجيا",titleEn:"Technology",textAr:"تحولت التكنولوجيا من أداة مساعدة إلى لغة جديدة للتواصل مع الطلاب وتصميم تعلم أكثر تفاعلًا.",textEn:"Technology became a new language for engaging students and designing interactive learning."},
+ {titleAr:"التطبيق",titleEn:"Practice",textAr:"بدأ كل معلم في تحويل ما تعلمه إلى أنشطة، موارد رقمية، وتجارب صفية قابلة للتنفيذ.",textEn:"Each teacher turned learning into activities, digital resources, and classroom experiences."},
+ {titleAr:"الأثر",titleEn:"Impact",textAr:"الأثر الحقيقي ظهر في ثقة المعلم، تفاعل الطلاب، واتساع مساحة الإبداع داخل المدرسة.",textEn:"The real impact appeared in teacher confidence, student engagement, and a wider space for creativity."},
+ {titleAr:"معرض التخرج",titleEn:"Graduation Showcase",textAr:"هنا نحتفل بأعمال المعلمين، قصصهم، ورحلتهم من التعلم إلى التأثير.",textEn:"Here we celebrate teachers' work, stories, and their journey from learning to impact."}
+];
+
+const IMPACT_NUMBERS = [
+  {num:"22",labelAr:"معلمًا ومعلمة",labelEn:"Teachers"},
+  {num:"1",labelAr:"عام كامل من التعلم",labelEn:"Year of Learning"},
+  {num:"7",labelAr:"محطات في الرحلة",labelEn:"Journey Stations"},
+  {num:"5",labelAr:"أصوات دعمت الرحلة",labelEn:"Voices Behind the Journey"},
+  {num:"∞",labelAr:"تجارب تعليمية رقمية",labelEn:"Digital Learning Experiences"}
+];
+
+/* ============================================================
+   STATE / STORAGE
+============================================================ */
+const STORAGE_KEY = "mostakbaly_state_v1";
+let state = loadState();
+let currentLang = "ar";
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      const parsed = JSON.parse(raw);
+      if(parsed && parsed.teachers && parsed.partners && parsed.hero) return parsed;
+    }
+  }catch(e){}
+  return { teachers: JSON.parse(JSON.stringify(DEFAULT_TEACHERS)), partners: JSON.parse(JSON.stringify(DEFAULT_PARTNERS)), hero: JSON.parse(JSON.stringify(DEFAULT_HERO)) };
+}
+function saveState(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+/* ============================================================
+   AVATAR GENERATOR (abstract portrait, no external images)
+============================================================ */
+const AVATAR_PALETTES = [
+  ["#22d9c4","#0d1638","#f8e3a8"],
+  ["#d3a94e","#0a1230","#22d9c4"],
+  ["#b177e0","#0d1638","#f2a94e"],
+  ["#38d69f","#101c44","#e27ba0"],
+  ["#5fb3e0","#0a1230","#f8e3a8"],
+  ["#e27ba0","#101c44","#38d69f"],
+  ["#f2a94e","#0d1638","#b177e0"],
+  ["#22d9c4","#172751","#e27ba0"]
+];
+function hashStr(str){
+  let h = 0;
+  for(let i=0;i<str.length;i++){ h = (h<<5) - h + str.charCodeAt(i); h |= 0; }
+  return Math.abs(h);
+}
+function generateAvatarSVG(teacher){
+  const h = hashStr(teacher.id + teacher.nameAr);
+  const pal = AVATAR_PALETTES[h % AVATAR_PALETTES.length];
+  const headVariant = h % 4;
+  const hairVariant = Math.floor(h/4) % 4;
+  const shoulderVariant = Math.floor(h/16) % 3;
+  const uid = "av"+teacher.id;
+
+  const shoulders = [
+    `<path d="M14 100 Q50 68 86 100 L86 112 L14 112 Z" fill="url(#${uid}s)"/>`,
+    `<path d="M10 105 Q50 62 90 105 L90 114 L10 114 Z" fill="url(#${uid}s)"/>`,
+    `<path d="M16 98 Q50 74 84 98 L88 114 L12 114 Z" fill="url(#${uid}s)"/>`
+  ][shoulderVariant];
+
+  const heads = [
+    `<ellipse cx="50" cy="58" rx="22" ry="25" fill="url(#${uid}f)"/>`,
+    `<ellipse cx="50" cy="56" rx="24" ry="23" fill="url(#${uid}f)"/>`,
+    `<path d="M50 32 Q74 34 72 60 Q70 82 50 84 Q30 82 28 60 Q26 34 50 32 Z" fill="url(#${uid}f)"/>`,
+    `<ellipse cx="50" cy="60" rx="20" ry="26" fill="url(#${uid}f)"/>`
+  ][headVariant];
+
+  const hairs = [
+    `<path d="M28 48 Q26 24 50 22 Q74 24 72 48 Q60 36 50 40 Q40 36 28 48 Z" fill="${pal[1]}" opacity="0.9"/>`,
+    `<path d="M26 44 Q30 18 50 20 Q70 18 74 44 Q68 30 50 34 Q32 30 26 44 Z" fill="${pal[1]}" opacity="0.9"/>`,
+    `<circle cx="50" cy="34" r="26" fill="${pal[1]}" opacity="0.85"/><circle cx="50" cy="46" r="24" fill="url(#${uid}f)"/>`,
+    `<path d="M24 46 Q24 16 50 18 Q76 16 76 46 Q64 28 50 32 Q36 28 24 46 Z" fill="${pal[1]}" opacity="0.9"/>`
+  ][hairVariant];
+
+  return `
+  <svg viewBox="0 0 100 116" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="${uid}bg" cx="50%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="${pal[0]}" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="${pal[1]}" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="${uid}f" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="${pal[2]}"/>
+        <stop offset="100%" stop-color="${pal[0]}"/>
+      </linearGradient>
+      <linearGradient id="${uid}s" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${pal[0]}"/>
+        <stop offset="100%" stop-color="${pal[1]}"/>
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="55" r="50" fill="url(#${uid}bg)"/>
+    <circle cx="50" cy="55" r="46" fill="none" stroke="${pal[0]}" stroke-opacity="0.25" stroke-width="1"/>
+    <circle cx="18" cy="20" r="2.4" fill="${pal[2]}" opacity="0.7"/>
+    <circle cx="84" cy="30" r="1.8" fill="${pal[0]}" opacity="0.7"/>
+    <circle cx="80" cy="90" r="2" fill="${pal[2]}" opacity="0.6"/>
+    ${shoulders}
+    ${heads}
+    ${hairs}
+    <ellipse cx="42" cy="58" rx="12" ry="14" fill="#ffffff" opacity="0.06"/>
+  </svg>`;
+}
+
+/* ============================================================
+   PARTICLES
+============================================================ */
+function initParticles(){
+  const field = document.getElementById('particles-field');
+  const count = window.innerWidth < 700 ? 18 : 34;
+  for(let i=0;i<count;i++){
+    const dot = document.createElement('div');
+    dot.className = 'p-dot';
+    const size = 2 + Math.random()*3;
+    dot.style.width = size+'px';
+    dot.style.height = size+'px';
+    dot.style.left = Math.random()*100+'%';
+    dot.style.bottom = '-20px';
+    dot.style.animationDuration = (14 + Math.random()*16)+'s';
+    dot.style.animationDelay = (Math.random()*14)+'s';
+    field.appendChild(dot);
+  }
+}
+
+/* ============================================================
+   RENDER: STATIONS
+============================================================ */
+function renderStations(){
+  const wrap = document.getElementById('stations-container');
+  wrap.innerHTML = STATIONS.map((s,i)=>`
+    <div class="station reveal-station">
+      <div class="${i%2===0?'station-card':'station-spacer'}">
+        ${i%2===0? stationCardHtml(s,i) : ''}
+      </div>
+      <div class="station-num glass">${i+1}</div>
+      <div class="${i%2===0?'station-spacer':'station-card'}">
+        ${i%2!==0? stationCardHtml(s,i) : ''}
+      </div>
+    </div>
+  `).join('');
+}
+function stationCardHtml(s,i){
+  return `
+  <div class="glass" style="padding:26px 28px;">
+    <div class="station-scene">${stationSceneSVG(i)}</div>
+    <h3 class="station-title"><span class="ar">${s.titleAr}</span><span class="en">${s.titleEn}</span></h3>
+    <p class="station-text"><span class="ar">${s.textAr}</span><span class="en">${s.textEn}</span></p>
+  </div>`;
+}
+function stationSceneSVG(i){
+  const colors = ["#22d9c4","#d3a94e","#b177e0","#38d69f","#f2a94e","#5fb3e0","#e27ba0"];
+  const c = colors[i%colors.length];
+  return `<svg viewBox="0 0 300 64" preserveAspectRatio="none">
+    <path d="M0 40 Q75 ${10+i*4} 150 32 T300 20" stroke="${c}" stroke-width="2" fill="none" opacity="0.7"/>
+    <circle cx="${20+i*30}" cy="${30+ (i%3)*8}" r="4" fill="${c}"/>
+    <circle cx="${260-i*15}" cy="${20+(i%4)*6}" r="3" fill="#f8e3a8" opacity="0.8"/>
+  </svg>`;
+}
+
+/* ============================================================
+   RENDER: IMPACT
+============================================================ */
+function renderImpact(){
+  const grid = document.getElementById('impact-grid');
+  grid.innerHTML = IMPACT_NUMBERS.map(n=>`
+    <div class="impact-card glass reveal in-view">
+      <div class="impact-num">${n.num}</div>
+      <div class="impact-label"><span class="ar">${n.labelAr}</span><span class="en">${n.labelEn}</span></div>
+    </div>
+  `).join('');
+}
+
+/* ============================================================
+   RENDER: TEACHERS GALLERY
+============================================================ */
+function sortedTeachers(){
+  const list = state.teachers.filter(t => t.visible !== false);
+  const withOrder = list.filter(t => t.order !== null && t.order !== undefined && t.order !== "");
+  const withoutOrder = list.filter(t => t.order === null || t.order === undefined || t.order === "");
+  withOrder.sort((a,b)=> Number(a.order) - Number(b.order));
+  return [...withOrder, ...withoutOrder];
+}
+function populateAdminFilter(){
+  const sel = document.getElementById('filter-admin');
+  const admins = [...new Set(state.teachers.map(t => currentLang==='ar'? t.administrationAr : t.administrationEn))];
+  const current = sel.value;
+  sel.innerHTML = `<option value="">${currentLang==='ar'?'كل الإدارات':'All Administrations'}</option>` +
+    admins.map(a=>`<option value="${a}">${a}</option>`).join('');
+  sel.value = current;
+}
+function renderTeachers(){
+  populateAdminFilter();
+  const q = (document.getElementById('search-input').value || '').trim().toLowerCase();
+  const adminFilter = document.getElementById('filter-admin').value;
+  const grid = document.getElementById('teacher-grid');
+  let list = sortedTeachers();
+  if(q){
+    list = list.filter(t => (t.nameAr+t.nameEn).toLowerCase().includes(q));
+  }
+  if(adminFilter){
+    list = list.filter(t => t.administrationAr === adminFilter || t.administrationEn === adminFilter);
+  }
+  if(list.length === 0){
+    grid.innerHTML = `<div class="no-results"><span class="ar">لا توجد نتائج مطابقة</span><span class="en">No matching results</span></div>`;
+    return;
+  }
+  grid.innerHTML = list.map(t => `
+    <div class="teacher-card glass" onclick="handleTeacherClick('${t.id}')" onmousemove="cardGlow(event,this)">
+      <div class="avatar-wrap">${generateAvatarSVG(t)}</div>
+      <h3 class="t-name">${currentLang==='ar'? t.nameAr : t.nameEn}</h3>
+      <div class="t-meta">${currentLang==='ar'? t.schoolAr : t.schoolEn}</div>
+      <div class="t-meta admin-line">${currentLang==='ar'? t.administrationAr : t.administrationEn}</div>
+      <p class="t-bio">${currentLang==='ar'? t.bioAr : t.bioEn}</p>
+      <span class="view-btn"><span class="ar">عرض البطاقة</span><span class="en">View Card</span></span>
+    </div>
+  `).join('');
+}
+function cardGlow(e, el){
+  const rect = el.getBoundingClientRect();
+  el.style.setProperty('--mx', (e.clientX-rect.left)+'px');
+  el.style.setProperty('--my', (e.clientY-rect.top)+'px');
+}
+function clearFilters(){
+  document.getElementById('search-input').value = '';
+  document.getElementById('filter-admin').value = '';
+  renderTeachers();
+}
+
+/* ============================================================
+   TEACHER MODAL
+============================================================ */
+function handleTeacherClick(id){
+  const t = state.teachers.find(x => x.id === id);
+  if(!t) return;
+  if(t.personalSiteUrl && t.personalSiteUrl.trim() !== ''){
+    window.open(t.personalSiteUrl, '_blank', 'noopener,noreferrer');
+  } else {
+    openTeacherModal(t);
+  }
+}
+function openTeacherModal(t){
+  document.getElementById('modal-avatar').innerHTML = generateAvatarSVG(t);
+  document.getElementById('modal-name').textContent = currentLang==='ar'? t.nameAr : t.nameEn;
+  document.getElementById('modal-meta').textContent = (currentLang==='ar'? t.schoolAr : t.schoolEn) + ' · ' + (currentLang==='ar'? t.administrationAr : t.administrationEn);
+  document.getElementById('teacher-modal').classList.add('open');
+}
+function closeModal(){
+  document.getElementById('teacher-modal').classList.remove('open');
+}
+
+/* ============================================================
+   RENDER: PARTNERS
+============================================================ */
+function renderPartners(){
+  const grid = document.getElementById('partners-grid');
+  grid.innerHTML = state.partners.map((p,idx) => {
+    const isErcMain = p.group === 'erc-main';
+    const isErc = p.group === 'erc';
+    const roleAr = isErcMain ? 'شريك الرحلة' : isErc ? 'الشركة المصرية للتكرير ERC' : 'داعم ومدرّب';
+    const roleEn = isErcMain ? 'Journey Partner' : isErc ? 'Egyptian Refining Company – ERC' : 'Mentor &amp; Supporter';
+    const pseudo = {id:'partner'+idx, nameAr:p.nameAr};
+    return `
+    <div class="partner-card glass ${isErcMain?'erc':''}">
+      <div class="p-avatar">${generateAvatarSVG(pseudo)}</div>
+      <div class="p-name">${currentLang==='ar'? p.nameAr : p.nameEn}</div>
+      <div class="p-role">${currentLang==='ar'? roleAr : roleEn}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ============================================================
+   QNA (local demo)
+============================================================ */
+const QNA_KEY = "mostakbaly_qna_v1";
+function loadQna(){
+  try{ return JSON.parse(localStorage.getItem(QNA_KEY)) || []; }catch(e){ return []; }
+}
+function saveQna(list){ localStorage.setItem(QNA_KEY, JSON.stringify(list)); }
+
+function submitQuestion(){
+  const input = document.getElementById('qna-input');
+  const text = input.value.trim();
+  if(!text) return;
+  const list = loadQna();
+  list.push({ id: 'q'+Date.now(), question: text, answer: '', answered:false });
+  saveQna(list);
+  input.value = '';
+  renderQnaPublic();
+  if(document.getElementById('admin-overlay').classList.contains('open')) renderQnaAdmin();
+}
+function renderQnaPublic(){
+  const list = loadQna().filter(q => q.answered && q.answer);
+  const wrap = document.getElementById('qna-list');
+  if(list.length === 0){
+    wrap.innerHTML = `<div class="qna-empty"><span class="ar">لا توجد إجابات بعد. كن أول من يسأل!</span><span class="en">No answers yet. Be the first to ask!</span></div>`;
+    return;
+  }
+  wrap.innerHTML = list.map(q => `
+    <div class="qna-bubble glass">
+      <div class="qna-q">${q.question}</div>
+      <div class="qna-a">${q.answer}</div>
+    </div>
+  `).join('');
+}
+function renderQnaAdmin(){
+  const list = loadQna();
+  const wrap = document.getElementById('admin-qna-list');
+  if(list.length === 0){
+    wrap.innerHTML = `<p class="admin-note ar">لا توجد أسئلة بعد.</p>`;
+    return;
+  }
+  wrap.innerHTML = list.slice().reverse().map(q => `
+    <div class="qna-admin-item glass">
+      <div style="color:var(--teal);font-weight:700;font-size:.88rem;">${q.question}</div>
+      <textarea id="ans-${q.id}" placeholder="اكتب الإجابة هنا...">${q.answer||''}</textarea>
+      <div class="admin-actions-row" style="margin-top:8px;">
+        <button class="admin-mini-btn gold" onclick="answerQuestion('${q.id}')">حفظ الإجابة</button>
+        <button class="admin-mini-btn danger" onclick="deleteQuestion('${q.id}')">حذف</button>
+      </div>
+    </div>
+  `).join('');
+}
+function answerQuestion(id){
+  const list = loadQna();
+  const q = list.find(x=>x.id===id);
+  if(!q) return;
+  const val = document.getElementById('ans-'+id).value.trim();
+  q.answer = val;
+  q.answered = val.length > 0;
+  saveQna(list);
+  renderQnaAdmin();
+  renderQnaPublic();
+}
+function deleteQuestion(id){
+  let list = loadQna();
+  list = list.filter(x=>x.id!==id);
+  saveQna(list);
+  renderQnaAdmin();
+  renderQnaPublic();
+}
+
+/* ============================================================
+   LANGUAGE
+============================================================ */
+function setLang(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('btn-lang-ar').classList.toggle('active', lang==='ar');
+  document.getElementById('btn-lang-en').classList.toggle('active', lang==='en');
+  document.getElementById('search-input').placeholder = lang==='ar' ? 'ابحث بالاسم...' : 'Search by name...';
+  document.getElementById('qna-input').placeholder = lang==='ar' ? 'اكتب سؤالك هنا...' : 'Type your question here...';
+  renderTeachers();
+  renderPartners();
+}
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+function initReveal(){
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.reveal, .station').forEach(el => observer.observe(el));
+}
+
+/* ============================================================
+   ADMIN LOGIN / PANEL
+============================================================ */
+const ADMIN_KEY = "mostakbaly_admin_auth";
+function openAdminEntry(){
+  if(sessionStorage.getItem(ADMIN_KEY) === 'true'){
+    openAdmin();
+  } else {
+    document.getElementById('login-modal').classList.add('open');
+  }
+}
+function closeLoginModal(){
+  document.getElementById('login-modal').classList.remove('open');
+  document.getElementById('login-error').textContent = '';
+}
+function tryLogin(){
+  const u = document.getElementById('login-user').value;
+  const p = document.getElementById('login-pass').value;
+  if(u === 'admin' && p === '2026'){
+    sessionStorage.setItem(ADMIN_KEY, 'true');
+    closeLoginModal();
+    openAdmin();
+  } else {
+    document.getElementById('login-error').textContent = currentLang==='ar' ? 'بيانات الدخول غير صحيحة' : 'Invalid credentials';
+  }
+}
+function logoutAdmin(){
+  sessionStorage.removeItem(ADMIN_KEY);
+  closeAdmin();
+}
+function openAdmin(){
+  document.getElementById('admin-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  loadHeroFormValues();
+  renderAdminTeachers();
+  renderAdminPartners();
+  renderQnaAdmin();
+}
+function closeAdmin(){
+  document.getElementById('admin-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function showAdminTab(tab){
+  document.querySelectorAll('.admin-tab').forEach(b => b.classList.toggle('active', b.dataset.tab===tab));
+  document.querySelectorAll('.admin-panel-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+}
+
+/* Admin: teachers table */
+function renderAdminTeachers(){
+  const body = document.getElementById('admin-teachers-body');
+  body.innerHTML = state.teachers.map((t, idx) => `
+    <tr data-id="${t.id}">
+      <td>${idx+1}</td>
+      <td><input value="${escAttr(t.nameAr)}" onchange="updateTeacherField('${t.id}','nameAr',this.value)"></td>
+      <td><input value="${escAttr(t.nameEn)}" onchange="updateTeacherField('${t.id}','nameEn',this.value)"></td>
+      <td><input value="${escAttr(t.schoolAr)}" onchange="updateTeacherField('${t.id}','schoolAr',this.value)"></td>
+      <td><input value="${escAttr(t.schoolEn)}" onchange="updateTeacherField('${t.id}','schoolEn',this.value)"></td>
+      <td><input value="${escAttr(t.administrationAr)}" onchange="updateTeacherField('${t.id}','administrationAr',this.value)"></td>
+      <td><input value="${escAttr(t.administrationEn)}" onchange="updateTeacherField('${t.id}','administrationEn',this.value)"></td>
+      <td><textarea onchange="updateTeacherField('${t.id}','bioAr',this.value)">${escHtml(t.bioAr||'')}</textarea></td>
+      <td><textarea onchange="updateTeacherField('${t.id}','bioEn',this.value)">${escHtml(t.bioEn||'')}</textarea></td>
+      <td><input value="${escAttr(t.personalSiteUrl||'')}" placeholder="https://..." onchange="updateTeacherField('${t.id}','personalSiteUrl',this.value)"></td>
+      <td><input type="checkbox" ${t.visible!==false?'checked':''} onchange="updateTeacherField('${t.id}','visible',this.checked)"></td>
+      <td><input type="number" value="${t.order===null||t.order===undefined?'':t.order}" style="width:70px" onchange="updateTeacherField('${t.id}','order', this.value===''?null:Number(this.value))"></td>
+      <td>
+        <button class="admin-mini-btn" onclick="moveTeacher('${t.id}',-1)">↑</button>
+        <button class="admin-mini-btn" onclick="moveTeacher('${t.id}',1)">↓</button>
+      </td>
+    </tr>
+  `).join('');
+}
+function escAttr(s){ return String(s).replace(/"/g,'&quot;'); }
+function escHtml(s){ return String(s).replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function updateTeacherField(id, field, value){
+  const t = state.teachers.find(x=>x.id===id);
+  if(!t) return;
+  t[field] = value;
+  saveState();
+  renderTeachers();
+}
+function moveTeacher(id, dir){
+  const idx = state.teachers.findIndex(x=>x.id===id);
+  const newIdx = idx + dir;
+  if(newIdx < 0 || newIdx >= state.teachers.length) return;
+  const tmp = state.teachers[idx];
+  state.teachers[idx] = state.teachers[newIdx];
+  state.teachers[newIdx] = tmp;
+  saveState();
+  renderAdminTeachers();
+  renderTeachers();
+}
+
+/* Admin: hero text */
+function loadHeroFormValues(){
+  document.getElementById('hero-titleAr').value = state.hero.titleAr;
+  document.getElementById('hero-titleEn').value = state.hero.titleEn;
+  document.getElementById('hero-subAr').value = state.hero.subAr;
+  document.getElementById('hero-subEn').value = state.hero.subEn;
+  document.getElementById('hero-descAr').value = state.hero.descAr;
+  document.getElementById('hero-descEn').value = state.hero.descEn;
+}
+function saveHeroText(){
+  state.hero.titleAr = document.getElementById('hero-titleAr').value;
+  state.hero.titleEn = document.getElementById('hero-titleEn').value;
+  state.hero.subAr = document.getElementById('hero-subAr').value;
+  state.hero.subEn = document.getElementById('hero-subEn').value;
+  state.hero.descAr = document.getElementById('hero-descAr').value;
+  state.hero.descEn = document.getElementById('hero-descEn').value;
+  saveState();
+  applyHeroText();
+}
+function applyHeroText(){
+  document.querySelectorAll('.hero-title .ar').forEach(el=>el.textContent = state.hero.titleAr);
+  document.querySelectorAll('.hero-title .en').forEach(el=>el.textContent = state.hero.titleEn);
+  document.querySelectorAll('.hero-sub .ar').forEach(el=>el.textContent = state.hero.subAr);
+  document.querySelectorAll('.hero-sub .en').forEach(el=>el.textContent = state.hero.subEn);
+  document.querySelectorAll('.hero-desc .ar').forEach(el=>el.textContent = state.hero.descAr);
+  document.querySelectorAll('.hero-desc .en').forEach(el=>el.textContent = state.hero.descEn);
+}
+
+/* Admin: partners */
+function renderAdminPartners(){
+  const body = document.getElementById('admin-partners-body');
+  body.innerHTML = state.partners.map((p, idx) => `
+    <tr>
+      <td><input value="${escAttr(p.nameAr)}" onchange="updatePartnerField(${idx},'nameAr',this.value)"></td>
+      <td><input value="${escAttr(p.nameEn)}" onchange="updatePartnerField(${idx},'nameEn',this.value)"></td>
+      <td>${p.group}</td>
+    </tr>
+  `).join('');
+}
+function updatePartnerField(idx, field, value){
+  state.partners[idx][field] = value;
+}
+function savePartners(){
+  saveState();
+  renderPartners();
+}
+
+/* Admin: data management */
+function exportData(){
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'mostakbaly-data.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+function importData(evt){
+  const file = evt.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const parsed = JSON.parse(e.target.result);
+      if(parsed.teachers && parsed.partners && parsed.hero){
+        state = parsed;
+        saveState();
+        renderAdminTeachers();
+        renderAdminPartners();
+        loadHeroFormValues();
+        applyHeroText();
+        renderTeachers();
+        renderPartners();
+        alert(currentLang==='ar' ? 'تم الاستيراد بنجاح' : 'Import successful');
+      } else {
+        alert(currentLang==='ar' ? 'ملف غير صالح' : 'Invalid file');
+      }
+    }catch(err){
+      alert(currentLang==='ar' ? 'خطأ في قراءة الملف' : 'Error reading file');
+    }
+  };
+  reader.readAsText(file);
+}
+function resetData(){
+  if(!confirm(currentLang==='ar' ? 'هل تريد استعادة البيانات الأصلية؟ سيتم فقد كل التعديلات.' : 'Reset to original data? All edits will be lost.')) return;
+  state = { teachers: JSON.parse(JSON.stringify(DEFAULT_TEACHERS)), partners: JSON.parse(JSON.stringify(DEFAULT_PARTNERS)), hero: JSON.parse(JSON.stringify(DEFAULT_HERO)) };
+  saveState();
+  renderAdminTeachers();
+  renderAdminPartners();
+  loadHeroFormValues();
+  applyHeroText();
+  renderTeachers();
+  renderPartners();
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+function init(){
+  initParticles();
+  renderStations();
+  renderImpact();
+  applyHeroText();
+  renderTeachers();
+  renderPartners();
+  renderQnaPublic();
+  initReveal();
+  setLang('ar');
+
+  document.getElementById('teacher-modal').addEventListener('click', function(e){
+    if(e.target === this) closeModal();
+  });
+  document.getElementById('login-modal').addEventListener('click', function(e){
+    if(e.target === this) closeLoginModal();
+  });
+
+  if(window.location.hash === '#admin'){
+    openAdminEntry();
+  }
+}
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
